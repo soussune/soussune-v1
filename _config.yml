@@ -2,11 +2,11 @@ actors:
   trkw:
     image_url: /images/actors/trkw.jpg
     name: trkw
-    url: http://sns.example.com/alice
+    url: https://twitter.com/trkw_
   miyaoka:
     image_url: /images/actors/miyaoka.jpg
     name: miyaoka
-    url: http://sns.example.com/bob
+    url: https://twitter.com/miyaoka
 author: trkw
 description: そうっすね　揉んでいきたい　エンジニア　けれど他人を　知りたくて・・・
 description_long: Example long description
