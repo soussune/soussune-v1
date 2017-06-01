@@ -1,13 +1,13 @@
 actors:
-  alice:
-    image_url: /images/actors/alice.png
-    name: alice
+  trkw:
+    image_url: /images/actors/trkw.jpg
+    name: trkw
     url: http://sns.example.com/alice
-  bob:
-    image_url: /images/actors/bob.png
-    name: bob
+  miyaoka:
+    image_url: /images/actors/miyaoka.jpg
+    name: miyaoka
     url: http://sns.example.com/bob
-author: alice
+author: trkw
 description: Example description
 description_long: Example long description
 email: info@example.com
@@ -17,14 +17,14 @@ exclude:
   - LICENSE.txt
   - README.md
   - vendor
-hashtag: examplehashtag
+hashtag: soussunefm
 itunes_podcast_url:
-keywords: comma,separated,keywords
+keywords: soussune
 language: ja
 markdown: kramdown
 permalink: /episode/:title
 sass:
   sass_dir: css
 timezone: Asia/Tokyo
-title: Example title
-url: http://example.com
+title: sousssune.fm
+url: http://soussunefm.github.io
