@@ -26,7 +26,7 @@ permalink: /episode/:title
 sass:
   sass_dir: css
 timezone: Asia/Tokyo
-title: soussune.fm
+title: soussune
 url: https://soussune.com
 github:
   url: https://soussune.com
