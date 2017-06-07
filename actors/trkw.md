@@ -1,6 +1,6 @@
 ---
 layout: actor
-people:
+actor:
  - name: trkw
    image_url: /images/actors/trkw.jpg
    twitter_username: trkw_
