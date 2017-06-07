@@ -6,7 +6,6 @@ actor:
    twitter_username: trkw_
 ---
 
-UI/UX設計の豊富な経験を有するエンジニア。  
 HAL名古屋 WEB開発学部オープンソースシステム開発専攻にてコンピュータ・サイエンスを学び、  
 卒業後はNHN Japan株式会社(現LINE株式会社)へ入社。  
 
