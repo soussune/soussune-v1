@@ -7,6 +7,10 @@ actors:
     image_url: /images/actors/miyaoka.jpg
     name: miyaoka
     url: https://twitter.com/miyaoka
+  yugo:
+    image_url: /images/actors/yugo.jpg
+    name: yugo
+    url: https://twitter.com/ymmmo1
 author: trkw
 description: そうっすね　揉んでいきたい　エンジニア　けれど他人を　知りたくて・・・
 description_long: ポッドキャストを通じて他人の意見を揉んでいきたいエンジニアの集い
