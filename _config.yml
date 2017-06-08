@@ -10,7 +10,7 @@ defaults:
       layout: actor
 author: trkw
 description: そうっすね　揉んでいきたい　エンジニア　けれど他人を　知りたくて・・・
-description_long: ポッドキャストを通じて他人の意見を揉んでいきたいエンジニアの集い
+description_long: ポッドキャストを通じて他人と意見を揉んでいきたいエンジニアの集い
 email: info@example.com
 exclude:
   - Gemfile
