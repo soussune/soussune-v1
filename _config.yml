@@ -31,6 +31,5 @@ sass:
   sass_dir: css
 timezone: Asia/Tokyo
 title: soussune
-url: https://soussune.com
-github:
-  url: https://soussune.com
+url: https://soussune.com # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog/
