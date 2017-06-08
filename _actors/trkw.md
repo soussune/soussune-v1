@@ -1,11 +1,9 @@
 ---
-layout: actor
-actor:
-  id: trkw
-  name: trkw
-  image_url: /images/actors/trkw.jpg
-  twitter_username: trkw_
-  bio: NHN comico Tech Lead / aroma CODE Inc. CTO / ⌨️ / JavaScript / Python
+actor_id: trkw
+name: trkw
+image_url: /images/actors/trkw.jpg
+twitter_username: trkw_
+bio: NHN comico Tech Lead / aroma CODE Inc. CTO / ⌨️ / JavaScript / Python
 ---
 
 HAL名古屋 WEB開発学部オープンソースシステム開発専攻にてコンピュータ・サイエンスを学び、

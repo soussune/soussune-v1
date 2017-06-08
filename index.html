@@ -17,8 +17,10 @@ layout: default
         </p>
         <div class="list-group-element-images">
           {% for actor_id in post.actor_ids %}
-            {% assign actor = site.actors[actor_id] %}
-            <img src="{{ actor.image_url | prepend:site.baseurl }}" alt="{{ actor.name }}" class="list-group-element-images-element" width="40" height="40">
+            {% assign actor = site.actors | where:"actor_id", actor_id | first %}
+            <a href="{{ actor.url | prepend:site.baseurl }}">
+              <img src="{{ actor.image_url | prepend:site.baseurl }}" alt="{{ actor.name }}" class="list-group-element-images-element" width="40" height="40">
+            </a>
           {% endfor %}
         </div>
       </article>

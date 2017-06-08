@@ -7,15 +7,15 @@
       <div class="container">
         <article class="article card">
           <header class="article-header card-header">
-            <img src="{{ page.actor.image_url }}" alt="{{ page.actor.name }}" class="actor-image" width="72" height="72">
+            <img src="{{ page.image_url }}" alt="{{ page.name }}" class="actor-image" width="72" height="72">
             <h1 class="card-heading">
-              {{ page.actor.name }}
+              {{ page.name }}
             </h1>
             <div class="article-header-note">
-              <p class="author-bio">{{ page.actor.bio }}</p>
-              {% if page.actor.twitter_username %}
+              <p class="author-bio">{{ page.bio }}</p>
+              {% if page.twitter_username %}
                 <p>
-                  <a href="https://twitter.com/{{ page.actor.twitter_username }}" class="twitter-follow-button" data-show-count="false">Follow @{{ page.actor_twitter_username }}</a>
+                  <a href="https://twitter.com/{{ page.twitter_username }}" class="twitter-follow-button" data-show-count="false">Follow @{{ page.actor_twitter_username }}</a>
                   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
                 </p>
               {% endif %}
@@ -32,7 +32,7 @@
             </h2>
             <ul>
             {% for post in site.posts %}
-              {% if post.actor_ids contains page.actor.id %}
+              {% if post.actor_ids contains page.actor_id %}
               <li>
                 <a href="{{ post.url | prepend:site.baseurl }}">{{ post.title | escape }}</a>
               </li>
