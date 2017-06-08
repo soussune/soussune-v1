@@ -1,14 +1,16 @@
 ---
 layout: actor
 actor:
- - name: trkw
-   image_url: /images/actors/trkw.jpg
-   twitter_username: trkw_
+  id: trkw
+  name: trkw
+  image_url: /images/actors/trkw.jpg
+  twitter_username: trkw_
+  bio: NHN comico Tech Lead / aroma CODE Inc. CTO / ⌨️ / JavaScript / Python
 ---
 
-HAL名古屋 WEB開発学部オープンソースシステム開発専攻にてコンピュータ・サイエンスを学び、  
-卒業後はNHN Japan株式会社(現LINE株式会社)へ入社。  
+HAL名古屋 WEB開発学部オープンソースシステム開発専攻にてコンピュータ・サイエンスを学び、
+卒業後はNHN Japan株式会社(現LINE株式会社)へ入社。
 
-User Interface Technology室でテックリードとして様々なプロダクトに携わる。  
-プログラミングスキルに加え、ハードウェアデバイスの開発も得意で、AI、機械学習のスキルを習得中。  
+User Interface Technology室でテックリードとして様々なプロダクトに携わる。
+プログラミングスキルに加え、ハードウェアデバイスの開発も得意で、AI、機械学習のスキルを習得中。
 2017年、aroma CODEにCTOとして参画。

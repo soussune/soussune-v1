@@ -7,23 +7,24 @@
       <div class="container">
         <article class="article card">
           <header class="article-header card-header">
-            <img src="{{ page.actor[0].image_url }}" alt="{{ page.actor[0].name }}" class="actor-image" width="72" height="72">
+            <img src="{{ page.actor.image_url }}" alt="{{ page.actor.name }}" class="actor-image" width="72" height="72">
             <h1 class="card-heading">
-              {{ page.actor[0].name }}
+              {{ page.actor.name }}
             </h1>
             <div class="article-header-note">
-              <p class="author-bio">{{ page.actor[0].bio }}</p>
-              {% if page.actor[0].twitter_username %}
+              <p class="author-bio">{{ page.actor.bio }}</p>
+              {% if page.actor.twitter_username %}
                 <p>
-                  <a href="https://twitter.com/{{ page.actor[0].twitter_username }}" class="twitter-follow-button" data-show-count="false">Follow @{{ page.actor[0].twitter_username }}</a>
+                  <a href="https://twitter.com/{{ page.actor.twitter_username }}" class="twitter-follow-button" data-show-count="false">Follow @{{ page.actor_twitter_username }}</a>
                   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
                 </p>
               {% endif %}
             </div>
           </header>
+
           <section class="card-body markdown">
             {{ content }}
-           </section>
+          </section>
         </article>
       </div>
     </main>
