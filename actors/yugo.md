@@ -12,4 +12,4 @@ actor:
 
 React Nativeをガチってるフロントエンドエンジニア
 
-最近はReact NativeのためにOSSなどを作り始めるなど活動中
+React NativeのためにOSSなどを作り始めるなど活動中
