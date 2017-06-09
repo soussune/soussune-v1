@@ -39,7 +39,7 @@
             {% for post in site.posts %}
               {% if post.actor_ids contains page.actor_id %}
               <li>
-                <a href="{{ post.url | prepend:site.baseurl }}">{{ post.title | escape }}</a>
+                <a href="{{ post.url }}">{{ post.title | escape }}</a>
               </li>
               {% endif %}
             {% endfor %}
