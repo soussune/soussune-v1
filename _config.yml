@@ -21,7 +21,7 @@ exclude:
   - vendor
 hashtag: soussunefm
 itunes_podcast_url:
-keywords: soussune
+keywords: soussune,tech,technology,keyboard,web,development,developer
 language: ja
 markdown: kramdown
 permalink: /episode/:title
