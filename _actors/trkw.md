@@ -1,6 +1,6 @@
 ---
 actor_id: trkw
-name: trkw
+title: trkw
 image_url: /images/actors/trkw.jpg
 twitter_username: trkw_
 description: NHN comico Tech Lead / aroma CODE Inc. CTO / ⌨️ / JavaScript / Python

@@ -1,6 +1,6 @@
 ---
 actor_id: miyaoka
-name: miyaoka
+title: miyaoka
 image_url: /images/actors/miyaoka.jpg
 twitter_username: miyaoka
 description: ErgoDoxer / 手ぶら通勤 / PC gamer

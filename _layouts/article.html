@@ -46,9 +46,9 @@
               {% for actor_id in page.actor_ids %}
                 {% assign actor = site.actors | where:"actor_id", actor_id | first %}
                 <a href="{{ actor.url }}" class="actor">
-                  <img src="{{ actor.image_url | prepend:site.github.url }}" alt="{{ actor.name }}" class="actor-image" width="72" height="72">
+                  <img src="{{ actor.image_url | prepend:site.github.url }}" alt="{{ actor.title }}" class="actor-image" width="72" height="72">
                   <br>
-                  {{ actor.name }}
+                  {{ actor.title }}
                 </a>
               {% endfor %}
             </div>
