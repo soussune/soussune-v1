@@ -30,4 +30,4 @@ sass:
 timezone: Asia/Tokyo
 title: soussune
 url: https://soussune.com # the base hostname & protocol for your site
-audiourl: https://soussunemedia.blob.core.windows.net
+audiourl: https://soussune.blob.core.windows.net/audio
