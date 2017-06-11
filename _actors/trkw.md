@@ -3,7 +3,7 @@ actor_id: trkw
 title: trkw
 image_url: /images/actors/trkw.jpg
 twitter_username: trkw_
-description: aroma CODE Inc. CTO / JavaScript / Python
+description: aroma CODE Inc. CTO
 ---
 
 HAL名古屋 WEB開発学部オープンソースシステム開発専攻にてコンピュータ・サイエンスを学び、
