@@ -19,7 +19,7 @@ exclude:
   - LICENSE.txt
   - README.md
   - vendor
-hashtag: soussunefm
+hashtag: soussune
 itunes_podcast_url:
 keywords: soussune,tech,technology,keyboard,web,development,developer
 language: ja
