@@ -13,7 +13,7 @@ layout: default
           {{ post.date | date: "%Y年%m月%d日" }}
         </footer>
         <p>
-          {{ post.description }}
+          {% include post_description.inc post=post %}
         </p>
         <div class="list-group-element-images">
           {% for actor_id in post.actor_ids %}
