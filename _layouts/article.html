@@ -55,6 +55,15 @@
             {{ content }}
           </section>
           <footer class="article-footer">
+            <nav class="article-pagenav">
+              {% if page.previous.url %}
+                <a href="{{page.previous.url}}">&laquo; Older</a>
+              {% endif %}
+              {% if page.next.url %}
+                <a href="{{page.next.url}}">Newer &raquo;</a>
+              {% endif %}
+            </nav>
+
             <a class="twitter-share-button" href="https://twitter.com/intent/tweet?hashtags={{ site.hashtag }}&url={{ site.url }}{{ page.url }}&text={{ page.title }}">
               Tweet
             </a>
