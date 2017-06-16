@@ -35,7 +35,7 @@
               {% for item in sorted_actor_and_count reversed %}
                 {% assign actor = item.actor %}
                 <a href="{{ actor.url }}" class="actor">
-                  <img src="{{ actor.image_url | prepend:site.baseurl }}" alt="{{ actor.title }}" class="actor-image" width="72" height="72">
+                  <img src="{{ actor.image_url | prepend:site.baseurl }}" alt="{{ actor.title }}" class="actor-image" width="80" height="80">
                   <br>
                   {{ actor.title }}
                   ({{ item.count }})
