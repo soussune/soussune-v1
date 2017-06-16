@@ -8,6 +8,11 @@ defaults:
       type: actors
     values:
       layout: actor
+  - scope:
+      path: ""
+      type: posts
+    values:
+      is_post: true
 author: そうっすね制作委員会
 subtitle: そうっすね　揉んでいきたい　エンジニア　けれど他人を　知りたくて・・・
 description: テクノロジーと世の中についてエンジニア達が雑談するポッドキャストです。
