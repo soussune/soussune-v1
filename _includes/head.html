@@ -2,17 +2,17 @@
   <meta charset="utf-8">
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+  <meta name="description" content="{% include post_or_site_description.inc page=page %}" />
 
   <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}" />
-  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+  <meta property="og:description" content="{% include post_or_site_description.inc page=page %}" />
   <meta property="og:image" content="{{ site.url }}/images/ogp-artwork.jpg" />
   <meta property="og:site_name" content="{{ site.title }}" />
   <meta property="og:type" content="blog" />
   <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+  <meta name="twitter:description" content="{% include post_or_site_description.inc page=page %}" />
   <meta name="twitter:image" content="{{ site.url }}/images/ogp-artwork.jpg" />
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}" />
   <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
