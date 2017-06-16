@@ -56,12 +56,16 @@
           </section>
           <footer class="article-footer">
             <nav class="article-pagenav">
+              <div>
               {% if page.previous.url %}
                 <a href="{{page.previous.url}}">&laquo; Older</a>
               {% endif %}
+              </div>
+              <div>
               {% if page.next.url %}
                 <a href="{{page.next.url}}">Newer &raquo;</a>
               {% endif %}
+              </div>
             </nav>
 
             <a class="twitter-share-button" href="https://twitter.com/intent/tweet?hashtags={{ site.hashtag }}&url={{ site.url }}{{ page.url }}&text={{ page.title }}">
