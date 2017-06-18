@@ -1,4 +1,4 @@
-# 🎙　soussune.fm
+# 🎙soussune.fm
 
 https://soussune.com/
 
