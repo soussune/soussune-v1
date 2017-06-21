@@ -12,3 +12,7 @@ indent_size = 2
 [*.md]
 # Allow <br/> from Markdown
 trim_trailing_whitespace = false
+
+[_includes/*]
+# inline include
+insert_final_newline = false
