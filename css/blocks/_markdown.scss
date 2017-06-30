@@ -31,13 +31,13 @@
 
   pre {
     background-color: #f7f7f7;
-    border-radius: 3px;
-    font-family: $font-family-monospace;
+    border-radius: 16px;
     font-size: 85%;
     line-height: 1.45;
     overflow: auto;
     padding: 16px;
     word-wrap: normal;
+    white-space: pre-wrap;
 
     > code {
       font-size: 100%;

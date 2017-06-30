@@ -1,0 +1,211 @@
+---
+title: episode list
+description: 記事一覧
+---
+<!DOCTYPE html>
+<html lang={{ site.language }}>
+  {% include head.html %}
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="/assets/Keen-UI/keen-ui.min.js"></script>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="/assets/Keen-UI/keen-ui.min.css">
+
+  <body>
+    {% include header.html %}
+    <main class="main">
+      <div class="container">
+        <article class="article card">
+          <header class="article-header card-header">
+            <h1 class="card-heading">
+              Episode List
+            </h1>
+            <div class="article-header-note">
+              <p>{{ page.description }}</p>
+            </div>
+          </header>
+
+          <section class="card-body markdown">
+
+<div id="episode-list">
+
+  <ui-textbox
+    icon="textsms"
+    label="Search by content"
+    placeholder=""
+    :value="searchText"
+    v-ime-input="searchText"
+  ></ui-textbox>
+
+  <ui-textbox
+    icon="people"
+    label="Search by actor"
+    placeholder=""
+   :value="searchActor"
+    v-ime-input="searchActor"
+  ></ui-textbox>
+
+
+  <div
+    v-if="posts.length"
+  >
+    <div>
+      [[posts.length]]
+      /
+      [[rawPosts.length]]
+    </div>
+    <ui-collapsible
+      v-for="(post, index) in posts"
+      :key="index"
+    >
+      <div slot="header">
+        <span v-text="post.title"></span>
+        <span v-for="(actor, index) in post.actors" :key="index">
+          <actor
+            :actor="actor"
+          ></actor>
+        </span>
+      </div>
+      <div>
+        <a :href="post.url">open</a>
+        <pre v-text="post.content"></pre>
+      </div>
+    </ui-collapsible>
+  </div>
+  <div v-else>
+    not found.
+  </div>
+
+
+</div>
+
+          </section>
+
+        </article>
+      </div>
+    </main>
+    {% include footer.html %}
+  </body>
+<script>
+  const Actor = {
+    name: 'actor',
+    template: `
+<img
+  :src="actor.image_url"
+  :alt="actor.title"
+  :title="actor.title"
+  class="list-group-element-images-element"
+  width="40"
+  height="40"
+>
+`,
+    props: {
+      actor: Object
+    }
+  }
+
+
+  Vue.directive('ime-input', {
+    bind (el, binding, vnode) {
+      let onComposition = false
+      el.addEventListener('compositionstart', () => {
+        onComposition = true
+      })
+      el.addEventListener('compositionend', (e) => {
+        onComposition = false
+        console.log('end', binding.expression)
+        binding.value = e.target.value
+        Vue.set(vnode.context, binding.expression, e.target.value)
+      })
+      el.addEventListener('input', (e) => {
+        console.log('input', binding.expression)
+        if (onComposition) {
+          return
+        }
+        Vue.set(vnode.context, binding.expression, e.target.value)
+      })
+    }
+  })
+
+  RegExp.quote = (str) => {
+      return str.replace(/[.?*+^$[\]\\(){}|-]/g, "\\$&")
+  }
+  const filterPosts = (posts, query, target) => {
+    let _posts = posts
+    query
+    .split(/[\s,]+/)
+    .forEach(q => {
+      const r = new RegExp(RegExp.quote(q), 'i')
+      _posts = _posts.filter(post => target(post).some(t => t.match(r)))
+    })
+    return _posts
+  }
+
+  const app = new Vue({
+    el: '#episode-list',
+    delimiters: ['[[', ']]'], // Avoid to conflict to Jekyll template
+    components: {
+      Actor
+    },
+    computed: {
+      posts () {
+        return filterPosts(
+          filterPosts(
+            this.rawPosts,
+            this.searchActor,
+            (post) => post.actors.map(a => a.title)
+          ),
+          this.searchText,
+          (post) => [post.content, post.title, post.description]
+        )
+      }
+    },
+    data () {
+      return {
+        searchText: '',
+        searchActor: '',
+        search: {
+          text: '',
+          actor: ''
+        },
+        compstart: '',
+        compupdate: '',
+        compend: '',
+        input: '',
+        keydown: '',
+        change: '',
+        inputText: '',
+        ime: '',
+        text:{
+          ime: ''
+        },
+        rawPosts: [
+          {% for post in site.posts %}
+            {% capture desc %}{% include post_description.inc post=post %}{% endcapture %}
+
+            {
+              "url": {{ post.url | jsonify }},
+              "title": {{ post.title | jsonify }},
+              "actors": [
+                {% for actor_id in post.actor_ids %}
+                {
+                  {% assign actor = site.actors | where:"actor_id", actor_id | first %}
+                  "title": {{ actor.title | jsonify }},
+                  "image_url": {{ actor.image_url | jsonify }}
+                }{% unless forloop.last %},{% endunless %}
+                {% endfor %}
+              ],
+              "topics":  {{ post.topics | jsonify }},
+              "description": {{ desc | jsonify }},
+              "date": {{ post.date | jsonify }},
+              "content": {{ post.content | strip_html | jsonify }}
+            }{% unless forloop.last %},{% endunless %}
+
+          {% endfor %}
+        ]
+      }
+    }
+  })
+</script>
+</html>
