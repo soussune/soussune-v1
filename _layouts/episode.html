@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang={{ site.language }}>
+  {% include head.html %}
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/vue-material"></script>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://unpkg.com/vue-material/dist/vue-material.css">
+  <body>
+    {% include header.html %}
+    <main class="main">
+      <div class="container">
+        <article class="article card">
+          <header class="article-header card-header">
+            <h1 class="card-heading">
+              Episode List
+            </h1>
+            <div class="article-header-note">
+              <p>{{ page.description }}</p>
+            </div>
+          </header>
+
+          <section class="card-body markdown">
+
+<div id="episode-list">
+
+  <md-input-container md-inline>
+    <md-icon>search</md-icon>
+    <label>Search</label>
+    <md-input v-model="search"></md-input>
+  </md-input-container>
+
+  <md-checkbox v-model="show.description">description</md-checkbox>
+  <md-checkbox v-model="show.content">content</md-checkbox>
+  <md-checkbox v-model="show.topics">topics</md-checkbox>
+  <md-checkbox v-model="show.actors">actors</md-checkbox>
+
+
+<md-table>
+  <md-table-header>
+    <md-table-row>
+      <md-table-head>title</md-table-head>
+      <md-table-head style="width:200px">topics</md-table-head>
+      <md-table-head>actors</md-table-head>
+    </md-table-row>
+  </md-table-header>
+
+  <md-table-body>
+    <md-table-row v-for="(post, index) in posts" :key="index">
+      <md-table-cell v-text="post.title"></md-table-cell>
+      <md-table-cell>
+        <md-chip v-for="(topic, index) in post.topics" :key="index" v-text="topic" md-static></md-chip>
+      </md-table-cell>
+      <md-table-cell>
+        <md-avatar v-for="(actor, index) in post.actors" :key="index">
+          <img :src="actor.image_url" :alt="actor.title">
+          <md-tooltip md-direction="top" v-text="actor.title"></md-tooltip>
+        </md-avatar>
+      </md-table-cell>
+    </md-table-row>
+  </md-table-body>
+</md-table>
+
+
+  <ul v-if="posts.length">
+    <li v-for="post in posts">
+      <a :href="post.url" v-text="post.title"></a>
+      <div v-if="show.actors">
+        <div >
+          <md-avatar v-for="(actor, index) in post.actors" :key="index">
+            <img :src="actor.image_url" :title="actor.title">
+          </md-avatar>
+        </div>
+      </div>
+
+      <div v-if="show.description" v-text="post.description"></div>
+      <div v-if="show.content" v-text="post.content"></div>
+      <div v-if="show.topics">
+        <span v-for="topic in post.topics" v-text="topic"></span>
+      </div>
+
+    </li>
+  </ul>
+  <div v-else>
+    not found.
+  </div>
+</div>
+
+          </section>
+
+        </article>
+      </div>
+    </main>
+    {% include footer.html %}
+  </body>
+<script>
+  Vue.use(VueMaterial)
+
+Vue.material.registerTheme({
+  default: {
+    primary: 'blue',
+    accent: 'red'
+  },
+  green: {
+    primary: 'green',
+    accent: 'pink'
+  },
+  orange: {
+    primary: 'orange',
+    accent: 'green'
+  },
+})
+
+  const app = new Vue({
+    el: '#episode-list',
+    data: {
+      show: {
+        content: false,
+        description: false,
+        topics: false,
+        actors: false
+      },
+      search: '',
+      rawPosts: [
+        {% for post in site.posts %}
+          {% capture desc %}{% include post_description.inc post=post %}{% endcapture %}
+
+          {
+            "url": {{ post.url | jsonify }},
+            "title": {{ post.title | jsonify }},
+            "actors": [
+              {% for actor_id in post.actor_ids %}
+              {
+                {% assign actor = site.actors | where:"actor_id", actor_id | first %}
+                "title": {{ actor.title | jsonify }},
+                "image_url": {{ actor.image_url | jsonify }}
+              }{% unless forloop.last %},{% endunless %}
+              {% endfor %}
+            ],
+            "topics":  {{ post.topics | jsonify }},
+            "description": {{ desc | jsonify }},
+            "date": {{ post.date | jsonify }},
+            "content": {{ post.content | strip_html | strip_newlines | jsonify }},
+          }{% unless forloop.last %},{% endunless %}
+
+        {% endfor %}
+      ]
+    },
+    computed: {
+      posts() {
+        const search = this.search.toLowerCase()
+        return this.rawPosts.filter(post => {
+          return [post.content, post.title, post.description].some(str => {
+            return str.toLowerCase().includes(search)
+          })
+        })
+      }
+    }
+  })
+</script>
+</html>
