@@ -6,11 +6,10 @@ description: 記事一覧
 <html lang={{ site.language }}>
   {% include head.html %}
 
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
-<script src="/assets/Keen-UI/keen-ui.min.js"></script>
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
 <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="/assets/Keen-UI/keen-ui.min.css">
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 
   <body>
     {% include header.html %}
@@ -29,54 +28,70 @@ description: 記事一覧
           <section class="card-body markdown">
 
 <div id="episode-list">
+  <el-row :gutter="10">
+    <el-col :sm="16" :xs="24">
+      <div class="sub-title">Search by content</div>
+      <el-input
+        icon="search"
+        label="Search by content"
+        placeholder=""
+        :value="searchText"
+        v-ime-input="searchText"
+      >
+        <i
+          slot="icon"
+          class="el-input__icon material-icons"
+        >textsms</i>
+      </el-input>
+    </el-col>
+    <el-col :sm="8" :xs="24">
+      <div class="sub-title">Search by actor</div>
+      <el-input
+        label="Search by actor"
+        placeholder=""
+        :value="searchActor"
+        v-ime-input="searchActor"
+      >
+        <i
+          slot="icon"
+          class="el-input__icon material-icons"
+        >people</i>
+      </el-input>
+    </el-col>
+  </el-row>
 
-  <ui-textbox
-    icon="textsms"
-    label="Search by content"
-    placeholder=""
-    :value="searchText"
-    v-ime-input="searchText"
-  ></ui-textbox>
+  <div class="post-count">
+    <span class="post-count__filtered">[[posts.length]]</span>
+    /
+    <span class="post-count__raw">[[rawPosts.length]]</span>
+  </div>
 
-  <ui-textbox
-    icon="people"
-    label="Search by actor"
-    placeholder=""
-   :value="searchActor"
-    v-ime-input="searchActor"
-  ></ui-textbox>
-
-
-  <div
-    v-if="posts.length"
-  >
-    <div>
-      [[posts.length]]
-      /
-      [[rawPosts.length]]
-    </div>
-    <ui-collapsible
-      v-for="(post, index) in posts"
-      :key="index"
-    >
-      <div slot="header">
-        <span v-text="post.title"></span>
-        <span v-for="(actor, index) in post.actors" :key="index">
-          <actor
-            :actor="actor"
-          ></actor>
+  <div v-if="posts.length">
+    <el-collapse accordion>
+      <el-collapse-item
+        v-for="(post, index) in posts"
+        :key="index"
+      >
+        <span slot="title" class="post-header">
+          <span v-text="post.title" class="post-title"></span>
+          <span class="post-actors">
+            <actor
+              v-for="(actor, index) in post.actors"
+              :key="index"
+              :actor="actor"
+            ></actor>
+          </span>
         </span>
-      </div>
-      <div>
+
         <a :href="post.url">open</a>
         <pre v-text="post.content"></pre>
-      </div>
-    </ui-collapsible>
+
+      </el-collapse-item>
+    </el-collapse>
   </div>
   <div v-else>
     not found.
   </div>
-
 
 </div>
 
@@ -87,6 +102,27 @@ description: 記事一覧
     </main>
     {% include footer.html %}
   </body>
+<style>
+.post-count {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 28px;
+}
+.post-header {
+  display: inline-flex;
+}
+.post-title,
+.post-actors {
+  display: inline-flex
+}
+.post-title {
+  font-size: 16px;
+}
+.post-actors {
+  align-self: flex-end;
+}
+
+</style>
 <script>
   const Actor = {
     name: 'actor',
