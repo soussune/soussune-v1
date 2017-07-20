@@ -26,9 +26,7 @@
             {{ site.title }} への感想や質問などは、Twitterでハッシュタグ <a href="https://twitter.com/search?q=%23{{ site.hashtag }}" target="_blank">#{{ site.hashtag }}</a> をご利用ください。
           </div>
           <div class="footer-twitter">
-            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?hashtags={{ site.hashtag }}&url={{ site.url }}">
-              Tweet
-            </a>
+            {% include twitter_follow.inc username=site.twitter_username %}
           </div>
         </section>
         <section class="column-small-4 footer-sections-element">
