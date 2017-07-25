@@ -40,8 +40,9 @@ description: 記事一覧
       >
         <i
           slot="icon"
-          class="el-input__icon material-icons"
-        >textsms</i>
+          class="el-input__icon fa fa-lg fa-file-text-o"
+          aria-hidden="true"
+        ></i>
       </el-input>
     </el-col>
     <el-col :sm="8" :xs="24">
@@ -54,8 +55,9 @@ description: 記事一覧
       >
         <i
           slot="icon"
-          class="el-input__icon material-icons"
-        >people</i>
+          class="el-input__icon fa fa-lg fa-user"
+          aria-hidden="true"
+        ></i>
       </el-input>
     </el-col>
   </el-row>
@@ -72,7 +74,7 @@ description: 記事一覧
         v-for="(post, index) in posts"
         :key="index"
       >
-        <span slot="title" class="post-header">
+        <div slot="title" class="post-header">
           <span v-text="post.title" class="post-title"></span>
           <span class="post-actors">
             <actor
@@ -81,9 +83,17 @@ description: 記事一覧
               :actor="actor"
             ></actor>
           </span>
-        </span>
+        </div>
 
         <a :href="post.url">open</a>
+        <span class="post-topics">
+          <el-tag
+            v-for="(topic, index) in post.topics"
+            :key="index"
+            v-text="topic"
+          ></el-tag>
+        </span>
+
         <pre v-text="post.content"></pre>
 
       </el-collapse-item>
@@ -108,10 +118,10 @@ description: 記事一覧
   margin-top: 40px;
   font-size: 28px;
 }
-.post-header {
-  display: inline-flex;
+.post-meta {
+  display: flex;
 }
-.post-title,
+.post-topics
 .post-actors {
   display: inline-flex
 }
@@ -132,8 +142,8 @@ description: 記事一覧
   :alt="actor.title"
   :title="actor.title"
   class="list-group-element-images-element"
-  width="40"
-  height="40"
+  width="24"
+  height="24"
 >
 `,
     props: {
