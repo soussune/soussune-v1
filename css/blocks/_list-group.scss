@@ -21,8 +21,8 @@
     &-element {
       border-radius: 50%;
       border: 2px solid #fff;
-      box-sizing: border-box;
-      background-origin: border-box;
+      box-sizing: content-box;
+      background-origin: content-box;
 
       & + & {
         margin-left: 4px;
