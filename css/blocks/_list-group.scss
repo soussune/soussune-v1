@@ -14,8 +14,15 @@
   &-images {
     margin-top: 8px;
 
+    &-link {
+      margin-left: -8px;
+    }
+
     &-element {
       border-radius: 50%;
+      border: 2px solid #fff;
+      box-sizing: border-box;
+      background-origin: border-box;
 
       & + & {
         margin-left: 4px;
