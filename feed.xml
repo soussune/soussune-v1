@@ -5,7 +5,7 @@
   <channel>
     <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
     <link>{{ site.url }}/</link>
-    <title>{{ site.title }}</title>
+    <title>{{ site.title }} - {{ site.subtitle }}</title>
     <description>{{ site.description | xml_escape }}</description>
     <media:keywords>{{ site.keywords }}</media:keywords>
     <media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Technology</media:category>
