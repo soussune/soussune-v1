@@ -1,4 +1,4 @@
-$(function() {
+jQuery(function($) {
   $('#letter-form').one('submit',function(){
     var inputq1 = encodeURIComponent($('#episode').val());
     var inputq2 = encodeURIComponent($('#twitter_id').val());
@@ -12,4 +12,4 @@ $(function() {
     $(this)[0].action=submitURL;
     $('#input-feedback').text('Thank You!');
   });
-})(jQuery);
+});
