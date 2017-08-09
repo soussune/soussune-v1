@@ -56,6 +56,9 @@
             </ul>
             {{ content }}
           </section>
+          <section class="article-letter markdown">
+            {% include letter.html %}
+          </section>
           <footer class="article-footer">
             <nav class="article-pagenav">
               <div>
@@ -78,5 +81,6 @@
       </div>
     </main>
     {% include footer.html %}
+    <script src="/js/forms.js"></script>
   </body>
 </html>
