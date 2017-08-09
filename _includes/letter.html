@@ -1,15 +1,23 @@
-<section class="article-letter">
-  <h2>
-    おたより
-  </h2>
-  <form id="letter-form" action="" method="POST" target="no-target">
-    <input type="hidden" id="episode" name="episode" value="{{ page.title }}" required>
-    <label>Twitter ID</label><input type="text" id="twitter_id" placeholder="任意" name="twitter_id">
-    <label>メッセージ<span>*</span><label><textarea id="message" name="message" required>
-    </textarea>
-    <button id="form-submit" type="submit">SUBMIT</button>
-  </form>
-  <p id="input-feedback"></p>
-  <iframe src="#" id="no-target" name="no-target" style="visibility:hidden"></iframe>
-  <a href="https://docs.google.com/forms/d/13n0z30Q1nM_JCndajM6piDvmBgQ4zW4DNm5m98ODL88/formResponse?entry.286431956={{%20page.title%}}">
-</section>
+<form id="letter-form" action="" method="POST" target="no-target">
+  <input type="hidden" id="episode" name="episode" value="{{ page.title }}" required>
+  <div>
+    <label class="desc" for="twitter_id">Twitter ID</label>
+    <div>
+      <input id="twitter_id" name="twitter_id" type="text" class="field text fn" value="" size="8"  placeholder="任意">
+    </div>
+  </div>
+  <div>
+    <label class="desc" for="message">メッセージ<span>*</span></label>
+    <div>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+  </div>
+  <div>
+    <div>
+      <button id="form-submit" type="submit">送信</button>
+    </div>
+  </div>
+</form>
+<p id="input-feedback"></p>
+<iframe src="#" id="no-target" name="no-target" style="visibility:hidden"></iframe>
+<a href="https://docs.google.com/forms/d/13n0z30Q1nM_JCndajM6piDvmBgQ4zW4DNm5m98ODL88/formResponse?entry.286431956={{%20page.title%}}">

@@ -26,4 +26,114 @@
   & iframe{
     max-width: 100%;
   }
+
+  form > div {
+    clear: both;
+    overflow: hidden;
+    padding: 1px;
+    margin: 0 0 10px 0;
+  }
+  form > div > fieldset > div > div {
+    margin: 0 0 5px 0;
+  }
+  form > div > label,
+  legend {
+  	width: 25%;
+    float: left;
+    padding-right: 10px;
+    padding-top: 6px;
+  }
+  form > div > div,
+  form > div > fieldset > div {
+    width: 75%;
+    float: right;
+  }
+  form > div > fieldset label {
+    font-size: 0.9em;
+  }
+
+  fieldset {
+  	border: 0;
+    padding: 0;
+  }
+
+  input[type=text],
+  input[type=email],
+  input[type=url],
+  input[type=password],
+  textarea {
+    width: 100%;
+    border: none;
+    font-size: 100%;
+    padding: 10px;
+  }
+  textarea {
+    height: 100px;
+  }
+  input[type=text],
+  input[type=email],
+  input[type=url],
+  input[type=password] {
+    width: 50%;
+  }
+  button {
+    width: 50%;
+  }
+  input[type=text]:focus,
+  input[type=email]:focus,
+  input[type=url]:focus,
+  input[type=password]:focus,
+  textarea:focus {
+    outline: 0;
+    border-color: #4697e4;
+  }
+
+  @media (max-width: 600px) {
+    form > div {
+      margin: 0 0 15px 0;
+    }
+    form > div > label,
+    legend {
+  	  width: 100%;
+      float: none;
+      margin: 0 0 5px 0;
+    }
+    form > div > div,
+    form > div > fieldset > div {
+      width: 100%;
+      float: none;
+    }
+    input[type=text],
+    input[type=email],
+    input[type=url],
+    input[type=password],
+    textarea,
+    select {
+      width: 100%;
+    }
+  }
+  button {
+    background-color: #2c3d51;
+    border-color: #2c3d51;
+    box-shadow: 0 3px 0 #080c0f;
+    font-size: 18px;
+    white-space: nowrap;
+    width: 100%;
+    padding: .8em 1.5em;
+    font-family: Open Sans, Helvetica,Arial,sans-serif;
+    line-height: 18px;
+    display: inline-block;
+    zoom: 1;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    outline: none;
+    transition: border .25s linear, color .25s linear, background-color .25s linear;
+  }
+  @media (min-width: 1200px) {
+    form > div > label,
+  	legend {
+    	text-align: right;
+    }
+  }
 }
