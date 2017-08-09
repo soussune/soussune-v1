@@ -1,8 +1,17 @@
 .footer {
-  color: $color-text-dark-secondary;
+  color: #BBBBBB;
+  background: #222222;
   font-size: 0.9rem;
   padding-bottom: 64px;
   padding-top: 64px;
+
+  a, a:active, a:focus, a:hover {
+    color: #FFFFFF;
+  }
+
+  h1 {
+    color: #FFFFFF;
+  }
 
   &-copyright {
     text-align: center;

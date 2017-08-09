@@ -13,9 +13,17 @@
 
   &-images {
     margin-top: 8px;
+    margin-left: 10px;
+
+    &-link {
+      margin-left: -12px;
+    }
 
     &-element {
       border-radius: 50%;
+      border: 2px solid #fff;
+      box-sizing: content-box;
+      background-origin: content-box;
 
       & + & {
         margin-left: 4px;
