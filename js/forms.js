@@ -10,6 +10,6 @@ jQuery(function($) {
     var submitRef = '&submit=Submit';
     var submitURL = (baseURL + q1ID + "=" + inputq1 + "&" + q2ID + "=" + inputq2 + "&" + q3ID + "=" + inputq3 + submitRef);
     $(this)[0].action=submitURL;
-    $('#input-feedback').text('Thank You!');
+    $('#letter-form').text('Thank You!');
   });
 });
