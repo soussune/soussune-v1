@@ -26,4 +26,20 @@
   & iframe{
     max-width: 100%;
   }
+
+  & .letter {
+    border-radius: 20px;
+    padding: 20px;
+    border: 2px solid #666;
+    background: #ffffdd;
+
+    li {
+      list-style: none;
+
+      &:before {
+        margin-right: 0.25rem;
+        content: "👉";
+      }
+    }
+  }
 }
