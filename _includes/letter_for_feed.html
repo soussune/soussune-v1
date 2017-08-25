@@ -1,7 +1,12 @@
 {% assign post = include.post %}
 {% assign post_title = post.title | uri_escape %}
-<h2>おたより募集</h2>
+<h2>💬おたより募集中</h2>
 
 soussuneでは感想や質問などリスナーからのご意見をお待ちしています。
 
-<a href="https://twitter.com/intent/tweet?hashtags={{ site.hashtag }}&url={{ site.url }}{{ post.url }}&text={{ post_title }}">Twitterでツイート</a>していただくか、<a href="{{ "https://docs.google.com/forms/d/e/1FAIpQLSe4p8EuJIocQ_PJl7qe-lZ--pD7AN3LCk4FefDW0DmSBTBHIA/viewform?usp=sf_link&entry.286431956=" | append: post_title }}">感想フォーム</a>からコメントをお寄せください。
+<ul>
+  <li><i class="fa fa-twitter" aria-hidden="true"></i> <a href="https://twitter.com/intent/tweet?hashtags={{ site.hashtag }}&url={{ site.url }}{{ post.url }}&text={{ post_title }}">Twitter</a></li>
+  <li><i class="fa fa-list-alt" aria-hidden="true"></i> <a href="{{ "https://docs.google.com/forms/d/e/1FAIpQLSe4p8EuJIocQ_PJl7qe-lZ--pD7AN3LCk4FefDW0DmSBTBHIA/viewform?usp=sf_link&entry.286431956=" | append: post_title }}">感想フォーム</a></li>
+</ul>
+
+からお気軽にコメントをお寄せください😇
