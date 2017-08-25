@@ -26,19 +26,19 @@ rbenv rehash
 
 **4. Clone down the site**
 
-```
+```bash
 git clone https://github.com/soussune/soussune.github.io.git
 ```
 
 **5. Install site dependencies**
 
-```
+```bash
 bundle install --path vendor/bundle
 ```
 
 **6. Run site on your local computer**
 
-```
+```bash
 bundle exec jekyll serve
 ```
 
