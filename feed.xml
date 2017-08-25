@@ -23,11 +23,12 @@
     <itunes:explicit>no</itunes:explicit>
     {% for post in site.posts %}
       {% capture post_desc %}{% include post_description.inc post=post %}{% endcapture %}
+      {% capture letter_for_feed %}{% include letter_for_feed.html page=post %}{% endcapture %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
         <link>{{ post.url | prepend: site.url }}</link>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <description>{{ post_desc | append: post.content | xml_escape }}</description>
+        <description>{{ post_desc | append: post.content | append: letter_for_feed | xml_escape }}</description>
         <guid isPermaLink="true">{{ post.url | prepend: site.url }}</guid>
         <enclosure url="{{ post.audio_file_path | prepend: site.audiourl | xml_escape }}" length="{{ post.audio_file_size }}" type="audio/mp3"/>
         <itunes:author>{{ site.author }}</itunes:author>
