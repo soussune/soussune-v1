@@ -1,10 +1,12 @@
-<h2>
-  おたより
-</h2>
-<form id="letter-form" action="" method="POST" target="no-target">
-  <input type="hidden" id="episode" name="episode" value="{{ page.title }}" required>
-  <label>Twitter ID</label><input type="text" id="twitter_id" placeholder="任意" name="twitter_id">
-  <label>メッセージ<span>*</span><label><textarea id="message" name="message" required></textarea>
-  <button id="form-submit" type="submit">SUBMIT</button>
-</form>
-<p id="input-feedback"></p>
+{% assign post = include.post %}
+{% assign post_title = post.title | uri_escape %}
+<h2>💬おたより募集中</h2>
+
+soussuneでは感想や質問などリスナーからのご意見をお待ちしています。
+
+<ul>
+  <li><i class="fa fa-twitter" aria-hidden="true"></i> <a href="https://twitter.com/intent/tweet?hashtags={{ site.hashtag }}&url={{ site.url }}{{ post.url }}&text={{ post_title }}">Twitter</a></li>
+  <li><i class="fa fa-list-alt" aria-hidden="true"></i> <a href="{{ "https://docs.google.com/forms/d/e/1FAIpQLSe4p8EuJIocQ_PJl7qe-lZ--pD7AN3LCk4FefDW0DmSBTBHIA/viewform?usp=sf_link&entry.286431956=" | append: post_title }}">感想フォーム</a></li>
+</ul>
+
+からお気軽にコメントをお寄せください😇
