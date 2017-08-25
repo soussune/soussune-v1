@@ -4,13 +4,7 @@
 
   &-body,
   &-header {
-    padding-bottom: 32px;
-    padding-top: 32px;
-  }
-
-  &-body + &-body,
-  &-header + &-body {
-    padding-top: 0;
+    margin: 32px 0;
   }
 
   &-body-large {

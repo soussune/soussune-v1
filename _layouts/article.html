@@ -56,8 +56,8 @@
             </ul>
             {{ content }}
           </section>
-          <section class="article-letter markdown">
-            {% include letter.html %}
+          <section class="card-body markdown letter">
+            {% include letter.html post=page %}
           </section>
           <footer class="article-footer">
             <nav class="article-pagenav">
@@ -72,15 +72,10 @@
               {% endif %}
               </div>
             </nav>
-
-            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?hashtags={{ site.hashtag }}&url={{ site.url }}{{ page.url }}&text={{ page.title }}">
-              Tweet
-            </a>
           </footer>
         </article>
       </div>
     </main>
     {% include footer.html %}
-    <script src="/js/forms.js"></script>
   </body>
 </html>
