@@ -159,6 +159,10 @@
     padding-bottom: 10px;
     font-weight: 400;
     color: #9a7233;
+
+    a {
+      color: inherit;
+    }
   }
 
   h3:after {
