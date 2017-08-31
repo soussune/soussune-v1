@@ -153,7 +153,27 @@
   }
 
   h3 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    position: relative;
+    margin-top: 48px;
+    padding-bottom: 10px;
+    font-weight: 400;
+    color: $color-note-heading;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  h3:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 7px;
+    background: -webkit-repeating-linear-gradient(-45deg, $color-note-heading-border, $color-note-heading-border 2px, #fff 2px, #fff 4px);
+    background: repeating-linear-gradient(-45deg, $color-note-heading-border, $color-note-heading-border 2px, #fff 2px, #fff 4px);
   }
 
   h5 {
