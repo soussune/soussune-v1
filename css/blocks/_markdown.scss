@@ -158,7 +158,7 @@
     margin-top: 48px;
     padding-bottom: 10px;
     font-weight: 400;
-    color: #9a7233;
+    color: $color-note-heading;
 
     a {
       color: inherit;
@@ -172,8 +172,8 @@
     bottom: 0;
     width: 100%;
     height: 7px;
-    background: -webkit-repeating-linear-gradient(-45deg, #dcc38b, #dcc38b 2px, #fff 2px, #fff 4px);
-    background: repeating-linear-gradient(-45deg, #dcc38b, #dcc38b 2px, #fff 2px, #fff 4px);
+    background: -webkit-repeating-linear-gradient(-45deg, $color-note-heading-border, $color-note-heading-border 2px, #fff 2px, #fff 4px);
+    background: repeating-linear-gradient(-45deg, $color-note-heading-border, $color-note-heading-border 2px, #fff 2px, #fff 4px);
   }
 
   h5 {
