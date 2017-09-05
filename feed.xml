@@ -19,7 +19,10 @@
       <itunes:email>{{ site.email }}</itunes:email>
     </itunes:owner>
     <itunes:image href="{{ site.url }}/images/itunes-artwork.jpg" />
-    <itunes:category text="Technology"/>
+    <itunes:category text="Technology">
+      <itunes:category text="Tech News"/>
+      <itunes:category text="Software How-To"/>
+    </itunes:category>
     <itunes:explicit>no</itunes:explicit>
     {% for post in site.posts %}
       {% capture post_desc %}{% include post_description.inc post=post %}{% endcapture %}
