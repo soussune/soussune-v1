@@ -28,6 +28,7 @@ hashtag: soussune
 itunes_podcast_url: https://itunes.apple.com/jp/podcast/soussune/id1247135079
 keywords: soussune,tech,technology,keyboard,web,development,developer
 language: ja
+apple_itunes_app_id: 1247135079
 markdown: kramdown
 permalink: /episode/:title
 sass:
