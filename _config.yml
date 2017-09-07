@@ -17,7 +17,7 @@ author: そうっすね制作委員会
 subtitle: エンジニアわいわいポッドキャスト「そうっすね」
 description: テクノロジーと世の中についてエンジニア達が雑談するポッドキャストです。
 description_long: ポッドキャストを通じて他人と意見を揉んでいきたいエンジニアの集い
-email: miyan@t-p.jp
+email:
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -28,6 +28,7 @@ hashtag: soussune
 itunes_podcast_url: https://itunes.apple.com/jp/podcast/soussune/id1247135079
 keywords: soussune,tech,technology,keyboard,web,development,developer
 language: ja
+apple_itunes_app_id: 1247135079
 markdown: kramdown
 permalink: /episode/:title
 sass:
