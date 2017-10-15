@@ -13,7 +13,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   line-height: 1;
-  > * {
+  > *, .header-overlay {
     padding-right: constant(safe-area-inset-right);
     padding-left:  constant(safe-area-inset-left);
   }
