@@ -20,8 +20,8 @@ body {
   line-height: 1.7;
   word-wrap: break-word;
 
-  > *, :not(.header), .header-overlay {
+  .main, .footer, .header-overlay {
     padding-right: constant(safe-area-inset-right);
     padding-left:  constant(safe-area-inset-left);
-  }
+  }  
 }
