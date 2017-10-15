@@ -1,10 +1,10 @@
 <head>
   <meta charset="utf-8">
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }} - {{ site.subtitle}}</title>
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="{% include page_or_site_description.inc page=page %}" />
   <meta name="apple-itunes-app" content="app-id={{ site.apple_itunes_app_id }}">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }} - {{ site.subtitle}}" />
   <meta property="og:description" content="{% include page_or_site_description.inc page=page %}" />
   <meta property="og:image" content="{{ site.url }}/images/ogp-artwork.jpg" />
