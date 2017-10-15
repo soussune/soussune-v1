@@ -1,5 +1,7 @@
 .main {
   background-color: #f9f9f9;
+  padding-right: constant(safe-area-inset-right);
+  padding-left:  constant(safe-area-inset-left);
   padding-bottom: 48px;
   padding-top: 48px;
 }
