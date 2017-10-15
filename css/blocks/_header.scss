@@ -27,8 +27,6 @@
   &-overlay {
     background-color: rgba(0, 0, 0, 0.3);
     height: 100%;
-    padding-right: constant(safe-area-inset-right);
-    padding-left:  constant(safe-area-inset-left);
     padding-bottom: 96px;
     padding-top: 96px;
   }
