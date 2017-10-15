@@ -19,4 +19,9 @@ body {
   font-size: 17px;
   line-height: 1.7;
   word-wrap: break-word;
+
+  > *, :not(.header), .header-overlay {
+    padding-right: constant(safe-area-inset-right);
+    padding-left:  constant(safe-area-inset-left);
+  }
 }
