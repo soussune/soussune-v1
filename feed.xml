@@ -7,6 +7,7 @@
     <link>{{ site.url }}/</link>
     <title>{{ site.title }} - {{ site.subtitle }}</title>
     <description>{{ site.description | xml_escape }}</description>
+    <copyright>202169</copyright>
     <media:keywords>{{ site.keywords }}</media:keywords>
     <media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Technology</media:category>
     <language>{{ site.language }}</language>
